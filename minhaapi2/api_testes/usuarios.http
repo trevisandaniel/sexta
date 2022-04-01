@@ -1,0 +1,84 @@
+# Obter a liste de usuários
+GET http://localhost:3000/api/usuarios
+Content-Type: application/json
+###
+
+# Inserir um novo usuário
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Daniel Trevisan",
+    "email": "120221@upf.br",
+    "celular": "99999-9999",
+    "senha": "123",
+    "dataHoraCad": "2022-01-25T14:38:27.000z"
+}
+###
+
+# Alterar usuário
+PUT http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "_id": "6240a302fff112c8186767ad",
+    "nome": "Daniel alterado",
+    "email": "daniel@teste.com",
+    "celular": "54 9988 4455"
+}
+###
+
+//# Excluir um usuário
+//DELETE http://localhost:3000/api/usuarios/
+//Content-Type: application/json
+//###
+
+//# Obter pelo id do usuário
+//GET http://localhost:3000/api/usuarios/
+//Content-Type: application/json
+//###
+
+//# Obter usuários filtrando
+//GET http://localhost:3000/api/usuarios/filtro/fulano
+//Content-Type: application/json
+//###
+
+# Usuário sem nome requerido
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nome": "",
+    "email": "daniel@upf.br",
+    "celular": "9999-9999",
+    "senha": "123456",
+    "dataHoraCad": "2022-03-30T10:13:22.000z"
+}
+###
+
+# Usuário com email duplicado
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nome": "danielzinho",
+    "email": "daniel@teste.com",
+    "celular": "9999-9999",
+    "senha": "123456",
+    "dataHoraCad": "2022-03-30T10:13:22.000z"
+}
+###
+
+# Usuário com data inválida
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Dani",
+    "email": "dani@upf.br",
+     "celular": "99999-9999",
+    "senha": "123",
+    "dataHoraCad": "2022-20-25T17:32:25.000Z"
+}
+###
+
